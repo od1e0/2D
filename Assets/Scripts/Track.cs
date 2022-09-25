@@ -2,5 +2,6 @@
 {
     idle,
     walk,
-    jump
+    jump,
+    coin_rotation
 }

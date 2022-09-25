@@ -5,18 +5,27 @@ public class CharacterView : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _spriteRenderer;
 
+    [SerializeField]
+    private CoinsManager _coinsManager;
+
+    [SerializeField]
+    private LevelCompleteManager _levelCompleteManager;
+
     [Header("Settings")]
     [SerializeField]
     private float _walkSpeed = 1;
 
     [SerializeField]
-    private float _animationsSpeed = 3;
+    private float _animationsSpeed = 3f;
 
     [SerializeField]
-    private float _jumpStartSpeed = 2;
+    private float _jumpStartForse = 2;
 
     [SerializeField]
-    private float _doubleJump;
+    private Rigidbody2D _rigidbody;
+
+    [SerializeField]
+    private Collider2D _collider;
 
     [SerializeField]
     private float _movingTresh = 0.1f;
@@ -33,10 +42,13 @@ public class CharacterView : MonoBehaviour
     public SpriteRenderer SpriteRenderer => _spriteRenderer;
     public float WalkSpeed => _walkSpeed;
     public float AnimationsSpeed => _animationsSpeed;
-    public float JumpStartSpeed=> _jumpStartSpeed;
-    public float DoubleJumpSpeed=> _doubleJump;
+    public float JumpStartForse=> _jumpStartForse;
     public float MovingTresh => _movingTresh;
     public float FlyTresh=> _flyTresh;
     public float GroundLevel => _groundLevel;
     public float Acceleration => _acceleration;
+
+    public Rigidbody2D Rigidbody => _rigidbody;
+
+    public Collider2D Collider => _collider;
 }
