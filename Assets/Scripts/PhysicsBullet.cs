@@ -1,23 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-class PhysicsBullet
+public class PhysicsBullet
 {
-    public BulletView _bullets;
-    public PhysicsBullet(BulletView bullets)
+    private BulletView _bulletView;
+    private Vector3 _velocity;
+    
+    public PhysicsBullet(BulletView bulletView)
     {
-        _bullets = bullets;
-        _bullets.SetVisible(false);
+        _bulletView = bulletView;
+        _bulletView.SetVisible(false);
     }
+
     public void Throw(Vector3 position, Vector3 velocity)
     {
-        _bullets.SetVisible(false);
-        _bullets.transform.position = position;
-        _bullets.Rigidbody.velocity = Vector2.zero;
-        _bullets.Rigidbody.angularVelocity = 0;
-        _bullets.Rigidbody.AddForce(velocity, ForceMode2D.Impulse);
-        _bullets.SetVisible(true);
+        _bulletView.SetVisible(false);
+        _bulletView.transform.position = position;
+        _bulletView.Rigidbody.velocity = Vector2.zero;
+        _bulletView.Rigidbody.angularVelocity = 0;
+        _bulletView.Rigidbody.AddForce(velocity, ForceMode2D.Impulse);
+        _bulletView.SetVisible(true);
     }
 }
-

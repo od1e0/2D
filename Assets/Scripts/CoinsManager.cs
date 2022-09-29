@@ -1,37 +1,29 @@
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class CoinsManager : IDisposable
 {
-    private const float _animationsSpeed = 10;
-    private LevelObjectView _characterView;
     private SpriteAnimator _spriteAnimator;
-    private List<LevelObjectView> _coinViews;
-    public CoinsManager(LevelObjectView characterView, List<LevelObjectView>
-    coinViews, SpriteAnimator spriteAnimator)
+    private List<CoinView> _coinViews;
+    
+    public CoinsManager(List<CoinView> coinViews)
     {
-        _characterView = characterView;
-        _spriteAnimator = spriteAnimator;
         _coinViews = coinViews;
-        _characterView.OnLevelObjectContact += OnLevelObjectContact;
-        foreach (var coinView in coinViews)
+        
+        foreach (var coinView in _coinViews)
         {
-            _spriteAnimator.StartAnimation(coinView.SpriteRenderer,
-            Track.coin_rotation, true, _animationsSpeed);
+            coinView.OnLevelObjectContact += OnLevelObjectContact;
         }
     }
-    private void OnLevelObjectContact(LevelObjectView contactView)
+    private void OnLevelObjectContact(CoinView contactView)
     {
         if (_coinViews.Contains(contactView))
-        {
-            _spriteAnimator.StopAnimation(contactView.SpriteRenderer);
-            GameObject.Destroy(contactView.gameObject);
-        }
+            Object.Destroy(contactView.gameObject);
     }
     public void Dispose()
     {
-        _characterView.OnLevelObjectContact -= OnLevelObjectContact;
+        foreach (var coinView in _coinViews)
+            coinView.OnLevelObjectContact -= OnLevelObjectContact;
     }
 }
