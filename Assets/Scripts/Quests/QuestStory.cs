@@ -6,7 +6,6 @@ public class QuestStory : IQuestStory
 {
     private readonly List<IQuest> _questsCollection;
 
-    private QuestObjectView _questObjectView;
 
     //private SpriteRenderer _door;
     public bool IsDone => _questsCollection.All(value => value.IsCompleted);
@@ -36,7 +35,6 @@ public class QuestStory : IQuestStory
         
         if (IsDone)
         {
-            //_questObjectView.OpenDoor(_door);
             Debug.Log("Story done!");
         }
         else

@@ -1383,9 +1383,8 @@ MonoBehaviour:
   _questStoryConfigs:
   - {fileID: 11400000, guid: e0bbbf4e21c8f33429fef6c7f8273efd, type: 2}
   _questObjects:
-  - {fileID: 1917619681}
-  - {fileID: 1560413564}
-  _singleQuestView: {fileID: 1661990814}
+  - {fileID: 731112640}
+  _singleQuestView: {fileID: 731112640}
 --- !u!1 &724205782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &731112640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,6 +1501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 731112642}
+  _door: {fileID: 1273626679}
   _completedColor: {r: 0, g: 0.42745098, b: 0.0032517482, a: 1}
   _id: 4
 --- !u!61 &731112641
@@ -1517,7 +1517,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1}
+  m_Offset: {x: 0, y: -2.67}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3239,7 +3239,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0000006556511, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3250,7 +3250,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.99999857, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1302911551
 GameObject:
@@ -3604,7 +3604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1452760970
 Transform:
   m_ObjectHideFlags: 0
@@ -4006,6 +4006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 1560413566}
+  _door: {fileID: 0}
   _completedColor: {r: 0, g: 0.49411765, b: 0.03137255, a: 0}
   _id: 2
 --- !u!58 &1560413565
@@ -4527,6 +4528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 1661990816}
+  _door: {fileID: 0}
   _completedColor: {r: 0, g: 0.49411765, b: 0.03137255, a: 0}
   _id: 3
 --- !u!58 &1661990815
@@ -5105,7 +5107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1917619678
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5202,6 +5204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 1917619678}
+  _door: {fileID: 1273626679}
   _completedColor: {r: 0, g: 0.49411765, b: 0.03137255, a: 1}
   _id: 1
 --- !u!1 &1986963759

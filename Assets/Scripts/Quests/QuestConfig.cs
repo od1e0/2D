@@ -10,4 +10,5 @@ public class QuestConfig : ScriptableObject
 public enum QuestType
 {
     Switch,
+    Open,
 }

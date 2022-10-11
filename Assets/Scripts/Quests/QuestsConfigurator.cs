@@ -20,6 +20,7 @@ public class QuestsConfigurator : MonoBehaviour
     private readonly Dictionary<QuestType, Func<IQuestModel>> _questFactories = new Dictionary<QuestType, Func<IQuestModel>>
     {
         { QuestType.Switch, () => new SwitchQuestModel() },
+        { QuestType.Open, ()=> new OpenDoorModel() },
     };
   
     private readonly Dictionary<QuestStoryType, Func<List<IQuest>, IQuestStory>> _questStoryFactories = new Dictionary<QuestStoryType, Func<List<IQuest>, IQuestStory>>
@@ -62,7 +63,7 @@ public class QuestsConfigurator : MonoBehaviour
     
     private void Start()
     {
-        _singleQuest = new Quest(_singleQuestView, new SwitchQuestModel());
+        _singleQuest = new Quest(_singleQuestView, new OpenDoorModel());
         _singleQuest.Reset();
   
         _questStories = new List<IQuestStory>();
